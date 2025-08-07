@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Working Test</title>
+  </head>
+  <body>
+    <div id="root">Loading...</div>
+    <script>
+        // Non-module script to test if JavaScript executes at all
+        console.log('Non-module script executing');
+        setTimeout(() => {
+            document.getElementById('root').innerHTML = '<h1 style="color: blue;">Non-module JavaScript works!</h1><p>ES modules might be the issue.</p>';
+            console.log('DOM updated with non-module script');
+        }, 100);
+    </script>
+  </body>
+</html>

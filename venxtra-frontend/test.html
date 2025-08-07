@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Server Test</h1>
+    <p>If you can see this, the server is working!</p>
+    <script>
+        console.log('JavaScript is working');
+        fetch('/src/main.jsx')
+            .then(response => {
+                console.log('Main.jsx status:', response.status);
+                return response.text();
+            })
+            .then(text => {
+                console.log('Main.jsx loaded, length:', text.length);
+            })
+            .catch(error => {
+                console.error('Error loading main.jsx:', error);
+            });
+    </script>
+</body>
+</html>
